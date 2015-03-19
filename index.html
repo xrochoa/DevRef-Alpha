@@ -2,87 +2,116 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Git and Github Reference</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="with=device-with, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/lib/mustache.js"></script>
+    <script type="application/javascript" src="http://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="js/git.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        $("document").ready(function() {
+            var template = $("#itemTemplate").html();
+
+            var result = Mustache.render(template, data);
+
+            $("#templateContainer").html(result);
+
+
+
+        });
+        
+        $(document).ready(function(command){
+    $(".btn1[data-stateName]").click(function(){
+        $("." + $(this).attr("data-stateName")).toggle();
+        $(this).hide();
+        $(this).next().show();
+
+
+    });
+    $(".btn2[data-stateName]").click(function(){
+        $("." + $(this).attr("data-stateName")).toggle();
+        $(this).hide();
+        $(this).prev().show();
+
+    });
+});
+    </script>
 
 </head>
 
 <body>
+
+    <script type="text/template" id="itemTemplate">
+    {{! add ^ for conditional }}
+
+    {{#objectxxx}}
+        <div class="row">
+        <div class="col-sm-3">
+        <ul class="list-group">
+        {{#boolxxx}}
+            <li class="list-group-item">
+        {{/boolxxx}}
+        {{^boolxxx}}
+            <li class="list-group-item list-group-item-info">
+        {{/boolxxx}}
+        <span class="btn1" data-stateName="{{Command}}"><a class="glyphicon glyphicon-arrow-right"></a></span>
+        <span class="btn2" data-stateName="{{Command}}" hidden><a class="glyphicon glyphicon-arrow-down"></a></span>
+        <code>{{Command}}</code>
+        </li>
+        </ul></div>
+        <div class="col-sm-9"><pre>{{Description}}</pre></div>
+        </div>
+        <section class="toggle {{Command}}" hidden>
+        {{#options}}
+            <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+            <ul class="list-group">
+            {{#boolxxx}}
+                <li class="list-group-item">
+            {{/boolxxx}}
+            {{^boolxxx}}
+                <li class="list-group-item list-group-item-info">
+            {{/boolxxx}}
+            <code>{{Command}}</code></li>
+            </ul></div>
+        <div class="col-sm-9"><pre>{{Description}}</pre></div>
+        </div>       
+        {{/options}}
+        </section>
+    {{/objectxxx}}
+    </script>
+
     <div class="container-fluid">
         <h1>GIT and GITHUB <small>Reference</small></h1>
-        <h3>Areas:</h3>
-        <h4>Working Directory (WD), Staging Index (SI), Repository (Repo) and Stash</h4>
+        <h4>Working Directory <small>Current working directory</small></h4>
+        <h4>Staging Index <small>Indexes changes ready to go to repository</small></h4>
+        <h4>Repository <small>Stores history of versions</small></h4>
+        <h4>Stash <small>Stores temporary changes</small></h4>
+        <h4>Remote <small>Online repository</small></h4>
+        <h4>Cashed Remote <small>Clone of online repository stored locally</small></h4>
+        <br>
+
+
+
+
 
         <div class="row bg-primary">
-            <div class="col-sm-1">Command</div>
-            <div class="col-sm-1">Option</div>
-            <div class="col-sm-3">Arguments</div>
-            <div class="col-sm-4">Description</div>
-            <div class="col-sm-3">Example</div>
-        </div><br>
+            <div class="col-sm-4">Command</div>
+            <div class="col-sm-8">Description</div>
+        </div>
+        <br>
 
-        <div class="row">
-            <div class="col-sm-1"><code>git init</code>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4"><pre>Initializes a repository and tracking of current folder</pre>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-1"><code>git status</code>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4"><pre>Shows status of repository</pre>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-1"><code>git add</code>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4"><pre>Adds changes from working index to staging index</pre>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-                <div class="row">
-            <div class="col-sm-1"><code>git commit</code>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4"><pre>Adds changes from staging index to repository</pre>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-                </div>
-                <div class="row">
-            <div class="col-sm-1"><code>git diff</code>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4"><pre>Shows differences between working directory and staging index</pre>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-                    <div class="row">
-            <div class="col-sm-1"><code>git branch</code>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-4"><pre>Shows list of existing branches</pre>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
+        <div id="templateContainer"></div>
+
+
+
+
     </div>
-
-
-    <kbd>command + p</kbd>
-
 
 
 </body>
