@@ -68,18 +68,12 @@
         <section class="toggle {{Command}}" hidden>
         {{#options}}
             <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-2">
+            <div class="col-sm-5">
             <ul class="list-group">
-            {{#boolxxx}}
-                <li class="list-group-item">
-            {{/boolxxx}}
-            {{^boolxxx}}
-                <li class="list-group-item list-group-item-info">
-            {{/boolxxx}}
+            <li class="list-group-item-info">
             <code>{{Command}}</code></li>
             </ul></div>
-        <div class="col-sm-9"><pre>{{Description}}</pre></div>
+        <div class="col-sm-7"><pre>{{Description}}</pre></div>
         </div>       
         {{/options}}
         </section>
@@ -101,8 +95,8 @@
 
 
         <div class="row bg-primary">
-            <div class="col-sm-4">Command</div>
-            <div class="col-sm-8">Description</div>
+            <div class="col-sm-3">Command</div>
+            <div class="col-sm-9">Description</div>
         </div>
         <br>
 
