@@ -2,11 +2,11 @@ var data = {
     "objectxxx": [{
         "Command": "init",
         "Description": "Create an empty Git repository or reinitialize an existing one",
-        "boolxxx": true
+
     }, {
         "Command": "config",
         "Description": "Configuration options",
-        "boolxxx": true,
+
         "options": [{
             "Command": "git config --global alias.<alias> <command>",
             "Description": "Creates alias to type faster. Use \"\" for commands with a space"
@@ -20,15 +20,15 @@ var data = {
     }, {
         "Command": "help",
         "Description": "Get help about git commands and options",
-        "boolxxx": true
+
     }, {
         "Command": "add",
         "Description": "Add file contents to the index",
-        "boolxxx": false
+
     }, {
         "Command": "commit",
         "Description": "Record changes to the repository",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git commit --amend -m \"<message>\"",
             "Description": "Commits replacing last commit"
@@ -39,7 +39,7 @@ var data = {
     }, {
         "Command": "stash",
         "Description": "Save edits to a temporal stash",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git stash apply",
             "Description": "bring changes out of stash (leaves stash)"
@@ -68,11 +68,11 @@ var data = {
     }, {
         "Command": "status",
         "Description": "Show the working tree status",
-        "boolxxx": true
+
     }, {
         "Command": "log",
         "Description": "Show commit logs",
-        "boolxxx": true,
+
         "options": [{
             "Command": "git log",
             "Description": "Commit history"
@@ -116,7 +116,7 @@ var data = {
     }, {
         "Command": "diff",
         "Description": "Show changes between commits, commit and working tree, etc",
-        "boolxxx": true,
+
         "options": [{
             "Command": "git diff --color-words",
             "Description": "Shows modifications for words instead of lines"
@@ -139,7 +139,7 @@ var data = {
     }, {
         "Command": "show_",
         "Description": "Show various types of objects",
-        "boolxxx": true,
+
         "options": [{
             "Command": "git show SHA",
             "Description": "shows commit with diffs"
@@ -147,11 +147,11 @@ var data = {
     }, {
         "Command": "grep",
         "Description": "Print lines matching a pattern",
-        "boolxxx": true
+
     }, {
         "Command": "branch",
         "Description": "List, create, or delete branches",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git brach <branch>",
             "Description": "Create branch"
@@ -180,7 +180,7 @@ var data = {
     }, {
         "Command": "checkout",
         "Description": "Checkout a branch or paths to the working tree. Undo to last commited version.",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git checkout -d <branch>",
             "Description": "Create branch and move to it"
@@ -194,7 +194,7 @@ var data = {
     }, {
         "Command": "merge",
         "Description": "Join two or more development histories together",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git merge --abort",
             "Description": "Abort a merge when in conflict"
@@ -211,7 +211,7 @@ var data = {
     }, {
         "Command": "clone",
         "Description": "Clone a repository into a new directory",
-        "boolxxx": true,
+
         "options": [{
             "Command": "git clone <url> <dir>",
             "Description": "Create a local repo from remote"
@@ -219,7 +219,7 @@ var data = {
     }, {
         "Command": "fetch",
         "Description": "Download objects and refs from another repository",
-        "boolxxx": true,
+
         "options": [{
             "Command": "git fetch <origin>",
             "Description": "Get changes from remote"
@@ -227,11 +227,11 @@ var data = {
     }, {
         "Command": "pull",
         "Description": "Fetch from and integrate with another repository or a local branch (git fetch + git merge)",
-        "boolxxx": true
+
     }, {
         "Command": "push",
         "Description": "Update remote refs along with associated objects",
-        "boolxxx": true,
+
         "options": [{
             "Command": "git push -u origin master",
             "Description": "Pushes to remote and stablishes link between branches"
@@ -248,7 +248,7 @@ var data = {
     }, {
         "Command": "reset",
         "Description": "Reset current HEAD to the specified state",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git reset",
             "Description": "DANGEROUS! destructive move of HEAD (unless I save the SHA...that if not used will be saved as garbage until is thrown away at some point)"
@@ -268,7 +268,7 @@ var data = {
     }, {
         "Command": "mv",
         "Description": "Move or rename a file, a directory, or a symlink",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git mv <file>",
             "Description": "Rename file"
@@ -279,7 +279,7 @@ var data = {
     }, {
         "Command": "rm",
         "Description": "Remove files from the working tree and from the index",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git rm --cached filename",
             "Description": "used to to delete file when ignored by .gitignore but commited in the past"
@@ -290,7 +290,7 @@ var data = {
     }, {
         "Command": "remote",
         "Description": "List of remote repos (origin is default)",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git remote -v",
             "Description": "Info about url of fetch and push"
@@ -307,7 +307,7 @@ var data = {
     }, {
         "Command": "revert",
         "Description": "reverts",
-        "boolxxx": false,
+
         "options": [{
             "Command": "git revert -n 65a6s76fd76(partial SHA, form begining)",
             "Description": "reverts to a version without commiting, just staging (if the changes were too complex since that version its probably a better idea to do erge)"
@@ -318,7 +318,7 @@ var data = {
     }, {
         "Command": "OTHER",
         "Description": "OTHER",
-        "boolxxx": false,
+
         "options": [{
                 "Command": "git clean -f",
                 "Description": "Forces removal of unstaged items"

@@ -5,62 +5,38 @@
     <title>Git and Github Reference</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <script type="text/javascript" src="js/lib/mustache.js"></script>
-    <script type="application/javascript" src="http://code.jquery.com/jquery-2.1.3.js"></script>
-    <script src="js/git.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-
-    <script type="text/javascript">
-        $("document").ready(function() {
-            var template = $("#itemTemplate").html();
-
-            var result = Mustache.render(template, data);
-
-            $("#templateContainer").html(result);
-
-
-
-        });
-        
-        $(document).ready(function(command){
-    $(".btn1[data-stateName]").click(function(){
-        $("." + $(this).attr("data-stateName")).toggle();
-        $(this).hide();
-        $(this).next().show();
-
-
-    });
-    $(".btn2[data-stateName]").click(function(){
-        $("." + $(this).attr("data-stateName")).toggle();
-        $(this).hide();
-        $(this).prev().show();
-
-    });
-});
-    </script>
-
+    <script type="application/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/mustache/mustache.min.js"></script>
+    <script src="js/gitdata.js"></script>
+    <script type="text/javascript" src="js/gitjs.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        input {
+            padding: 2px 4px;
+            font-size: 90%;
+            color: #c7254e;
+            background-color: #f9f2f4;
+            border-radius: 4px;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        }
+    </style>
 </head>
 
 <body>
 
-    <script type="text/template" id="itemTemplate">
-    {{! add ^ for conditional }}
+    <script src="js/gitmust.js" type="text/template" id="itemTemplate" >
+        {{! add ^ for conditional }}
 
     {{#objectxxx}}
+    
         <div class="row">
         <div class="col-sm-3">
         <ul class="list-group">
-        {{#boolxxx}}
-            <li class="list-group-item">
-        {{/boolxxx}}
-        {{^boolxxx}}
-            <li class="list-group-item list-group-item-info">
-        {{/boolxxx}}
+        <li class="list-group-item">
         <span class="btn1" data-stateName="{{Command}}"><a class="glyphicon glyphicon-arrow-right"></a></span>
         <span class="btn2" data-stateName="{{Command}}" hidden><a class="glyphicon glyphicon-arrow-down"></a></span>
-        <code>{{Command}}</code>
+        <input value="{{Command}}"></intput>
         </li>
         </ul></div>
         <div class="col-sm-9"><pre>{{Description}}</pre></div>
@@ -70,8 +46,8 @@
             <div class="row">
             <div class="col-sm-5">
             <ul class="list-group">
-            <li class="list-group-item-info">
-            <code>{{Command}}</code></li>
+            <li class="list-group-item">
+            <input value="{{Command}}"></intput></li>
             </ul></div>
         <div class="col-sm-7"><pre>{{Description}}</pre></div>
         </div>       
@@ -90,10 +66,6 @@
         <h4>Cashed Remote <small>Clone of online repository stored locally</small></h4>
         <br>
 
-
-
-
-
         <div class="row bg-primary">
             <div class="col-sm-3">Command</div>
             <div class="col-sm-9">Description</div>
@@ -101,8 +73,6 @@
         <br>
 
         <div id="templateContainer"></div>
-
-
 
 
     </div>
