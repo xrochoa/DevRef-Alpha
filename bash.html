@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Git and Github Reference</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/mustache/mustache.min.js"></script>
+    <script src="js/bashdata.js"></script>
+    <script type="text/javascript" src="js/engine.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        input {
+            padding: 2px 4px;
+            font-size: 90%;
+            color: #c7254e;
+            background-color: #f9f2f4;
+            border-radius: 4px;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        }
+        p {text-align: center;}
+        li, pre {height: 45px;}
+    </style>
+</head>
+
+<body>
+
+    <script type="text/template" id="itemTemplate" >
+        {{! add ^ for conditional }}
+
+    {{#bashdata}}
+    
+        <div class="row">
+        <div class="col-sm-4">
+        <ul class="list-group">
+        <li class="list-group-item">
+        <span class="btn1" data-stateName="{{Command}}"><a class="glyphicon glyphicon-arrow-right"></a></span>
+        <span class="btn2" data-stateName="{{Command}}" hidden><a class="glyphicon glyphicon-arrow-down"></a></span>
+        <input value="{{Command}} "></intput>
+        </li>
+        </ul></div>
+        <div class="col-sm-2"><p>{{Arguments}}</p></div>
+        <div class="col-sm-6"><pre>{{Description}}</pre></div>
+        </div>
+        <section class="toggle {{Command}}" hidden>
+        {{#Options}}
+            <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+            <ul class="list-group">
+            <li class="list-group-item">
+            <input value="{{Option}}"></intput></li>
+            </ul></div>
+        <div class="col-sm-6"><pre>{{Description}}</pre></div>
+        </div>       
+        {{/Options}}
+        </section>
+    {{/bashdata}}
+    </script>
+
+    <div class="container-fluid">
+        <h1>Bash Shell <small>Reference</small></h1>
+        <h4>Variables</h4>
+        <h6>$SHELL <small>Opens current shell</small></h6>
+        <h6>$0 <small>Opens current shell inside a shell</small></h6>
+        <h6>$HOME or ~ <small>Current user directory</small></h6>
+        <h4>Paths</h4>
+        <h6>.. <small>parent directory</small></h6>
+        <h6>path <small>relative path</small></h6>
+        <h6>/path <small>absolute path</small></h6>
+        <h6>~ <small>user directory</small></h6>
+        <h6>- <small>last directory</small></h6>
+        <h4>Common options</h4>
+        <h6>-h --help <small>Prints help message</small></h6>
+        <h6>-v --version <small>Prints version</small></h6>
+        <h4>Common hotkeys</h4>
+        <h6>q <small>quit</small></h6>
+        <h6>f <small>forward</small></h6>
+        <h6>b <small>backward</small></h6>
+        <h6>spacebar <small>next page</small></h6>
+        <h6>tab <small>autocomplete</small></h6>
+        <h6>tab tab <small>autocomplete options</small></h6>
+
+
+
+
+
+
+        
+
+
+        <br>
+
+        <div class="row bg-primary">
+            <div class="col-sm-2">Command</div>
+            <div class="col-sm-2">Options</div>
+
+            <div class="col-sm-2"><p>&lt;Arguments&gt;</p></div>
+            <div class="col-sm-6">Description</div>
+        </div>
+        <br>
+
+        <div id="templateContainer"></div>
+
+
+    </div>
+
+
+</body>
+
+</html>
