@@ -171,7 +171,7 @@ var data = {
             "Arguments": "<file or path/file>"
         }, {
             "Command": "rm",
-            "Description": "remove directory entries",
+            "Description": "remove/delete files and folders",
             "Options": [{
                 "Option": "-R",
                 "Description": "includes subfolders and files"
@@ -189,7 +189,46 @@ var data = {
                 "Description": "creates symbolic link"
             }],
             "Arguments": "<file>"
+        }, {
+            "Command": "find",
+            "Description": "search for files and folders, e.g. find ~ -name *.jpg -and -not -path *Images*",
+            "Arguments": "<path> <expression>"
+        }, {
+            "Command": "whoami",
+            "Description": "display effective user id"
+        }, {
+            "Command": "groups",
+            "Description": " show group memberships"
+        }, {
+            "Command": "chown",
+            "Description": "change file owner and group",
+            "Options": [{
+                "Option": "-R",
+                "Description": "includes subfolders and files"
+            }],
+            "Arguments": "<user> :<group>"
+        }, {
+            "Command": "sudo",
+            "Description": "execute a command as root or another user",
+            "Options": [{
+                "Option": "-k",
+                "Description": "resets time stamp asking for password again"
+            }, {
+                "Option": "-u <user>",
+                "Description": "execute command as a specified user"
+            }],
+            "Arguments": "<command>"
+        }, {
+            "Command": "chmod",
+            "Description": "change file modes or Access Control Lists",
+            "Options": [{
+                "Option": "-R",
+                "Description": "includes subfolders and files"
+            }],
+            "Arguments": "<mode> <file>"
         }
+
+
 
 
 
@@ -197,17 +236,18 @@ var data = {
 };
 
 var template1 = {
-    "Command": "rmdir",
-    "Description": "remove empty directories",
-    "Arguments": "<path>"
+    "Command": "groups",
+    "Description": " show group memberships",
+    "Arguments": "<file>"
+
 };
 
 var template = {
-    "Command": "ln",
-    "Description": "creates hardlink",
+    "Command": "chmod",
+    "Description": "change file modes or Access Control Lists",
     "Options": [{
-        "Option": "-s",
-        "Description": "creates symbolic link"
+        "Option": "-R",
+        "Description": "includes subfolders and files"
     }],
-    "Arguments": "<file>"
+    "Arguments": "<mode>"
 };
