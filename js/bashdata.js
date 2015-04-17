@@ -226,7 +226,50 @@ var data = {
                 "Description": "includes subfolders and files"
             }],
             "Arguments": "<mode> <file>"
-        }
+        }, {
+            "Command": "whereis",
+            "Description": "locate programs",
+            "Arguments": "<command>"
+
+        }, {
+            "Command": "which",
+            "Description": "locate a program file in the user's path",
+            "Arguments": "<command>"
+
+        }, {
+            "Command": "date",
+            "Description": "display or set date and time. format e.g. '+m-%d-%Y %H:%M:%S'",
+            "Arguments": "<format>"
+
+
+        }, {
+            "Command": "uptime",
+            "Description": "show how long system has been running"
+        }, {
+            "Command": "who",
+            "Description": "display who is logged in"
+        }, {
+            "Command": "users",
+            "Description": "list current users"
+        }, {
+            "Command": "uname",
+            "Description": "print operating system name",
+            "Options": [{
+                "Option": "-mnrsvp or -ap",
+                "Description": "all options for all info is printed"
+            }]
+
+        }, {
+            "Command": "hostname",
+            "Description": "set or print name of current host system",
+            "Arguments": "<host>"
+
+        }, {
+            "Command": "domainname",
+            "Description": "set or print name of current YP/NIS domain",
+            "Arguments": "<ypdomain>"
+
+        },
 
 
 
@@ -236,9 +279,9 @@ var data = {
 };
 
 var template1 = {
-    "Command": "groups",
-    "Description": " show group memberships",
-    "Arguments": "<file>"
+    "Command": "who",
+    "Description": "display who is logged in",
+    "Arguments": "<command>"
 
 };
 
